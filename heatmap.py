@@ -5,7 +5,7 @@ from matplotlib.animation import FuncAnimation
 
 def heatmap(grid, iteration, ghostcells, im_dir, number_processes):
     sb.heatmap(grid, cmap="YlGnBu")
-    plt.title("{} Iterationenen".format((iteration + 1)*ghostcells))
+    plt.title("{} Iter".format((iteration + 1)*ghostcells))
     plt.xlabel("x")
     plt.ylabel("y")
     plt.axis("equal")
