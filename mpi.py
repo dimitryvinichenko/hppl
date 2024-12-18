@@ -4,9 +4,6 @@ import sys
 from mpi_util import heat_parallel, create_directory, def_stencil, time_measurement
 import math
 
-######################################################################################################################
-    # Parralel Computing Projektarbeit im Wintersemester 2020/2021 von Anne Schulte-Kroll (Matrikelnummer: 192904)
-######################################################################################################################
 
 if __name__ == "__main__":
     # Input error exception
@@ -28,16 +25,10 @@ if __name__ == "__main__":
     iterations = int(sys.argv[4]) # number of timesteps (iterations)
     output = bool(sys.argv[5] == "True") #output or no output
 
-    # N=10000
-    # alpha=float(1e-6)
-    # ghostcells=500
-    # iterations=2
-    # output=bool(False)
 
     boundary = 20.0
     initial = 0.0
     
-    ################################## initialize Variables #############################################
 
     comm = MPI.COMM_WORLD # intracommunicator instance
     rank = comm.Get_rank() # The process rank (Example: 0,1 for 2 processes)
@@ -45,7 +36,6 @@ if __name__ == "__main__":
    
     h = 1 / (N + 1) # The stepsize
 
-    # calculate gridpart size and rest
 
     sqrt_proc=math.sqrt(number_processes)
 
@@ -66,12 +56,7 @@ if __name__ == "__main__":
     dt = h * h / (4 * alpha) 
     
 
-    ###################################################################################################################
 
-
-    ################################### call Functions  ###############################################################
-
-    #create the stencil
     stencil = def_stencil(alpha, dt, h)
 
 
