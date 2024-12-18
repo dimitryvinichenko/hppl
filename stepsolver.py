@@ -118,7 +118,6 @@ def stepsolver (im_dir, time_eval, grid,rank, iterations, number_processes, grid
                     grid[i * gridpart_length:(i + 1) * gridpart_length, ] = return_values
 
             #save visualizations
-            #Achtung: Für jede Iteration wird ein Bild erstellt, ggf. auskommentieren
             if output:
                 heatmap(grid, iteration, ghostcells, im_dir,number_processes)
     if rank==0:
