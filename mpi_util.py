@@ -88,7 +88,7 @@ def time_measurement(sqrt, sqrt_proc,initial,boundary,rank, iterations, number_p
     cwd = os.getcwd()
     s_dir = str(cwd +"/statistics/")
     
-    time_df = pd.DataFrame(columns=["N","Processes","Geisterzellenbreite","Stepsolver2","Iterations","Overall Time", "Time","Output"])
+    time_df = pd.DataFrame(columns=["N","Processes","Gs","Stepsolver2","Iterations","Overall Time", "Time","Output"])
     #time measurement file (set range higher to get more evaluations)
     for i in range(0, 1):
         if rank == 0:
